@@ -1,0 +1,16 @@
+[package]
+authors = ["Mark Hintz <markinportland7@gmail.com>"]
+name = "platform"
+version = "0.1.0"
+
+[dependencies]
+error-chain = "0.11.0"
+gfx = "*"
+gl = "*"
+itertools = "0.6.2"
+nalgebra = "*"
+nphysics3d = "*"
+rand = "*"
+threadpool = "1.7.0"
+sdl2 = "0.29.1"
+gfx_window_sdl = "0.6.0"
