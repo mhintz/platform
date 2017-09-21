@@ -11,36 +11,9 @@ extern crate nalgebra;
 extern crate nphysics3d;
 
 mod platform;
+mod errors;
+
 use platform::*;
-
-#[allow(dead_code)]
-mod errors {
-	use gfx_window_sdl;
-
-	error_chain!{
-		foreign_links {
-			// Error(gfx_window_sdl::InitError);
-		}
-
-		errors {
-			Init(t: &'static str) {
-				description("Initialization Error")
-				display("Error during initialization: {}", t)
-			}
-
-			Update(t: &'static str) {
-				description("Update Error")
-				display("Error encountered while updating: {}", t)
-			}
-
-			Draw(t: &'static str) {
-				description("Draw Error")
-				display("Error encountered while drawing: {}", t)
-			}
-		}
-	}
-}
-
 use errors::*;
 
 fn main() {
@@ -54,9 +27,7 @@ fn main() {
 }
 
 fn run() -> Result<()> {
-	let mut app = Platform::new();
-
-	app.init().chain_err(|| "Initialization Error")?;
+	let mut app = Platform::init().chain_err(|| "Initialization Error")?;
 
 	loop {
 		match app.update().chain_err(|| "Update Error")? {
