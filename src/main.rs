@@ -5,13 +5,17 @@ extern crate rand;
 extern crate threadpool;
 
 extern crate sdl2;
+#[macro_use]
 extern crate gfx;
 extern crate gfx_window_sdl;
+extern crate gfx_device_gl;
 extern crate nalgebra;
 extern crate nphysics3d;
 
 mod platform;
 mod errors;
+mod basic_pipeline;
+mod mesh;
 
 use platform::*;
 use errors::*;

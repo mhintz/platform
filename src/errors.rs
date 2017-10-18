@@ -1,10 +1,11 @@
 #![allow(dead_code)]
 
 use gfx_window_sdl;
+use gfx;
 
 error_chain!{
 	foreign_links {
-
+		PipelineStateError(gfx::PipelineStateError<String>);
 	}
 
 	errors {
@@ -40,3 +41,9 @@ impl From<gfx_window_sdl::InitError> for Error {
 		Error::from(ErrorKind::from(err))
 	}
 }
+
+// impl From<gfx::PipelineStateError<String>> for ErrorKind {
+// 	fn from(err: gfx::PipelineStateError) -> ErrorKind {
+// 		ErrorKind::Draw(format!("GFX Pipeline State Error: {:?}"))
+// 	}
+// }
