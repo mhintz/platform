@@ -1,21 +1,28 @@
+// -- External crates
+
 #[macro_use]
 extern crate error_chain;
 extern crate itertools;
 extern crate rand;
 extern crate threadpool;
 
-extern crate sdl2;
-#[macro_use]
-extern crate gfx;
-extern crate gfx_window_sdl;
-extern crate gfx_device_gl;
 extern crate nalgebra;
 extern crate nphysics3d;
 
+extern crate sdl2;
+#[macro_use]
+extern crate gfx;
+extern crate gfx_device_gl;
+extern crate gfx_window_sdl;
+
+// -- App modules
+
 mod platform;
 mod errors;
-mod basic_pipeline;
+mod standard_pipeline;
 mod mesh;
+
+// -- App framework
 
 use platform::*;
 use errors::*;

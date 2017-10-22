@@ -12,7 +12,7 @@ gfx_defines! {
         tex_coord0: [f32; 2] = "a_tex_coord0",
     }
 
-    pipeline basic_pipeline {
+    pipeline standard_pipeline {
         vertex_buffer: gfx::VertexBuffer<Vertex> = (),
         // projection_mat: gfx::Global<[[f32; 4]; 4]> = "uProjectionMatrix",
         // view_mat: gfx::Global<[[f32; 4]; 4]> = "uViewMatrix",

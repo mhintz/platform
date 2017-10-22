@@ -1,4 +1,4 @@
-use basic_pipeline::Vertex;
+use standard_pipeline::Vertex;
 
 pub struct Mesh {
     pub vertices: Vec<Vertex>,
